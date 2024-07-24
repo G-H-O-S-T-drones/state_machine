@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <rosparam command="load" file="$(find state_machine)/params/SM_params.yaml"/> 
+    <node name ="SM_state_machine" pkg="state_machine" type ="MainStateMachine.py" launch-prefix="bash -c 'sleep 3; $0 $@'" output="screen">
+        <param name="type_test" value="fase_1"/>
+    </node>
+    <node name ="SM_control" pkg="state_machine" type ="Control_Wrapper.py" output="screen"/>
+</launch>

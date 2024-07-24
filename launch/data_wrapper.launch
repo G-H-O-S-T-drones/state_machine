@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <rosparam command="load" file="$(find controladora_esfera)/params/SM_params.yaml"/> 
+    <node name ="SM_wrapper" pkg="controladora_esfera" type ="Data_Wrapper.py" launch-prefix="bash -c 'sleep 3; $0 $@'" output="screen">
+        <param name="type_test" value="test_6"/>
+    </node>
+</launch>
